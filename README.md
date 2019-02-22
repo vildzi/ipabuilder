@@ -7,7 +7,7 @@ This only supports macos at the moment but will gain linux and windows support s
 
 IpaBuilder requires you to have xcode installed (xcodebuild cli).  
 Once you have installed xcode, clone the repo and copy the binary (buildipa) to /usr/local/bin, then you can use `buildipa` from any directory.  
-Or use [NPM](npmjs.com) / [YARN](https://yarnpkg.com)  
+Or use [NPM](https://npmjs.com) / [YARN](https://yarnpkg.com)  
 NPM: `npm i -g ipabuilder`  
 YARN: `yarn global add ipabuilder`
 
