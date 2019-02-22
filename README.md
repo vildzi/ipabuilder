@@ -13,4 +13,5 @@ YARN: `yarn global add ipabuilder`
 
 ## Usage
 
-`buildipa project_dir output_dir`
+`buildipa project_dir output_dir`  
+If you get an error while building the xcode project, it is most likely due to invalid configurations on the xcode project. Open xcode and change the Bundle Identifier and Team on the project settings. If this doesn't work or you get any other errors, open a github issue.
