@@ -22,5 +22,8 @@
     "start": "babel-node src/index.js",
     "build": "babel src --out-dir lib",
     "build-binary": "pkg lib/index.js"
+  },
+  "bin": {
+    "buildipa": "./buildipa"
   }
 }
