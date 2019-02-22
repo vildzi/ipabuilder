@@ -3,7 +3,6 @@ import 'colors';
 import { promisify } from 'util';
 import { platform } from 'os';
 import dirExists from 'directory-exists';
-import fs from 'fs';
 
 const dir = process.argv[2];
 const dirOut = process.argv[3];
@@ -26,7 +25,7 @@ if (!dir || !dirOut) {
   }
   if (!await dirExists(dirOut)) {
     console.log(`${'info'.blue} The specified output directory does not exist. Creating output directory...`);
-    fs.mkdirSync(dirOut);
+    await run(`mkdir ${dirOut}`);
   }
   console.log(`${'info'.blue} Building xcode project...`);
   if (await run('type -p xcodebuild') === 'xcodebuild not found') {
