@@ -26,6 +26,7 @@ if (!dir || !dirOut) {
   if (!await dirExists(dirOut)) {
     console.log(`${'info'.blue} The specified output directory does not exist. Creating output directory...`);
     await run(`mkdir ${dirOut}`);
+    console.log(`${'complete'.green} Created output directory!`);
   }
   console.log(`${'info'.blue} Building xcode project...`);
   if (await run('type -p xcodebuild') === 'xcodebuild not found') {
@@ -51,4 +52,5 @@ if (!dir || !dirOut) {
   console.log(`${'info'.blue} Cleaning up...`);
   await run(`cd ${dir} && rm -rf build`);
   console.log(`${'complete'.green} Finished cleaning up!`);
+  console.log(`${'complete'.green} Created ${file.split('.').shift()}.ipa in ${dirOut}!`);
 })();
