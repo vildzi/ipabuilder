@@ -1,7 +1,7 @@
 # IpaBuilder
 
 Build an ipa from an xcode project. This does not require having a developer account ($100 / yr).  
-This only supports macos at the moment but will gain linux and windows support soon-ish
+This only supports macos at the moment (xcode command line tools).
 
 ## Installation
 
