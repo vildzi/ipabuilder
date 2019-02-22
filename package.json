@@ -1,6 +1,6 @@
 {
   "name": "ipabuilder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Build an ipa from an xcode project",
   "main": "src/index.js",
   "repository": "https://github.com/vilP1l/ipabuilder.git",
@@ -21,9 +21,9 @@
   "scripts": {
     "start": "babel-node src/index.js",
     "build": "babel src --out-dir lib",
-    "build-binary": "pkg lib/index.js --targets node8-macos-x64 --output buildipa"
+    "build-binary": "rm buildipa && pkg lib/index.js --targets node8-macos-x64 --output buildipa"
   },
   "bin": {
-    "buildipa": "./lib/index.js"
+    "buildipa": "./buildipa"
   }
 }
