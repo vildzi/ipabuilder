@@ -3,13 +3,14 @@ import 'colors';
 import { promisify } from 'util';
 import { platform } from 'os';
 import dirExists from 'directory-exists';
+import fs from 'fs';
 
 const dir = process.argv[2];
 const dirOut = process.argv[3];
 const run = promisify(get);
 
 if (platform() !== 'darwin') {
-  console.log(`${'err'.red} Only macos is currently supported.`);
+  console.log(`${'err'.red} Only macOS is currently supported.`);
   process.exit();
 }
 
@@ -24,8 +25,8 @@ if (!dir || !dirOut) {
     process.exit();
   }
   if (!await dirExists(dirOut)) {
-    console.log(`${'err'.red} The specified output directory does not exist.`);
-    process.exit();
+    console.log(`${'info'.blue} The specified output directory does not exist. Creating output directory...`);
+    fs.mkdirSync(dirOut);
   }
   console.log(`${'info'.blue} Building xcode project...`);
   if (await run('type -p xcodebuild') === 'xcodebuild not found') {
